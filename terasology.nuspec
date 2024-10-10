@@ -4,9 +4,9 @@
     <id>terasology</id>
     <version>5.4.0-rc1-1</version>
     <title>Terasology Omega</title>
-    <authors>MovingBlocks</authors>
-    <owners>MovingBlocks</owners>
-    <licenseUrl>https://github.com/MovingBlocks/Terasology/blob/develop/LICENSE.md</licenseUrl>
+    <authors>The Terasology Foundation</authors>
+    <owners>The Terasology Foundation</owners>
+    <licenseUrl>https://github.com/MovingBlocks/Terasology/blob/develop/LICENSE</licenseUrl>
     <projectUrl>https://terasology.org</projectUrl>
     <iconUrl>https://terasology.org/assets/images/logo.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>

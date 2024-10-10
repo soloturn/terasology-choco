@@ -8,6 +8,8 @@
     <owners>The Terasology Foundation</owners>
     <licenseUrl>https://github.com/MovingBlocks/Terasology/blob/develop/LICENSE</licenseUrl>
     <projectUrl>https://terasology.org</projectUrl>
+    <projectSourceUrl>https://github.com/MovingBlocks/Terasology</projectSourceUrl>
+    <bugTrackerUrl>https://github.com/MovingBlocks/Terasology/issues</bugTrackerUrl>
     <iconUrl>https://terasology.org/assets/images/logo.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Terasology is an open-source voxel world game.</description>

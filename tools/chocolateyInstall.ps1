@@ -4,6 +4,7 @@ $zipFileName = 'TerasologyOmega.zip'
 $cacheDir    = Join-Path $env:ChocolateyInstall 'cache'
 $cachedFile  = Join-Path $cacheDir $zipFileName
 $installDir  = Join-Path $env:ProgramFiles "$packageName"
+$toolsDir = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 
 # Ensure the cache directory exists
 if (!(Test-Path $cacheDir)) {
@@ -40,3 +41,11 @@ if (Test-Path $linuxDir) {
     Remove-Item $linuxDir -Recurse -Force
 }
 
+# patch files, here, bat file does not know its location in original
+
+$sourceFile = Join-Path $toolsDir 'terasology.bat' 
+$destinationFile = Join-Path $installDir 'Terasology.bat' 
+
+# Check if the destination file exists and overwrite it
+Write-Host "Overwriting file in $destinationFile"
+Copy-Item -Path $sourceFile -Destination $destinationFile -Force

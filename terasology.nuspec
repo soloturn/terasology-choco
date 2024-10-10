@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>terasology</id>
+    <version>5.4.0-rc.1</version>
+    <title>Terasology Omega</title>
+    <authors>MovingBlocks</authors>
+    <owners>MovingBlocks</owners>
+    <licenseUrl>https://github.com/MovingBlocks/Terasology/blob/develop/LICENSE.md</licenseUrl>
+    <projectUrl>https://terasology.org</projectUrl>
+    <iconUrl>https://terasology.org/assets/images/logo.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Terasology is an open-source voxel world game.</description>
+    <summary>Open-source sandbox game that draws inspiration from Minecraft and Dwarf Fortress.</summary>
+    <tags>game voxel sandbox terasology</tags>
+  </metadata>
+</package>
+

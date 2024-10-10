@@ -1,7 +1,7 @@
 $packageName = 'terasology'
 $zipUrl      = 'https://github.com/MovingBlocks/Terasology/releases/download/v5.4.0-rc.1/TerasologyOmega.zip'
 $zipFileName = 'TerasologyOmega.zip'
-$cacheDir    = Join-Path $env:ChocolateyInstall 'cache'  # Custom cache location inside Chocolatey's installation folder
+$cacheDir    = Join-Path $env:ChocolateyInstall 'cache'
 $cachedFile  = Join-Path $cacheDir $zipFileName
 $installDir  = Join-Path $env:ProgramFiles "$packageName"
 
@@ -17,7 +17,6 @@ if (!(Test-Path $installDir)) {
 
 # Check if the zip file is already cached
 if (!(Test-Path $cachedFile)) {
-    # Download and cache the zip file if not present
     Write-Host "Downloading $packageName to cache..."
     Get-ChocolateyWebFile -PackageName $packageName -FileFullPath $cachedFile -Url $zipUrl
 } else {
@@ -25,6 +24,19 @@ if (!(Test-Path $cachedFile)) {
 }
 
 # Extract the zip file to the installation directory
-Write-Host "Extracting $cachedFile to $installDir..."
 Get-ChocolateyUnzip -FileFullPath $cachedFile -Destination $installDir
+
+# Remove unnecessary macOS and Linux folders
+$macosDir = Join-Path $installDir 'natives/macosx'
+$linuxDir = Join-Path $installDir 'natives/linux'
+
+if (Test-Path $macosDir) {
+    Write-Host "Removing macOS folder..."
+    Remove-Item $macosDir -Recurse -Force
+}
+
+if (Test-Path $linuxDir) {
+    Write-Host "Removing Linux folder..."
+    Remove-Item $linuxDir -Recurse -Force
+}
 
